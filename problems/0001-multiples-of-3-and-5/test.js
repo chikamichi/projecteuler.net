@@ -1,8 +1,14 @@
 import { expect } from 'chai'
-import { solution } from './index'
+import { solution, solutionSmart } from './index'
 
 describe('Solution', () => {
-  it('should return the correct result', () => {
+  it('should return the correct result for n=10', () => {
     expect(solution(10), 'solution(10) gave bad result').to.equal(23)
+  })
+})
+
+describe('Solution - smarter computation', () => {
+  it('should return the correct result for n=10', () => {
+    expect(solutionSmart(10), 'solution(10) gave bad result').to.equal(23)
   })
 })
