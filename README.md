@@ -19,7 +19,7 @@ You may use Mocha & Chai to write tests.
 
 ## Solved problems
 
-* 1. [Multiples of 3 and 5](https://projecteuler.net/problem=1) ([solution](problems/0001-multiples-of-3/))
+* 1. [Multiples of 3 and 5](https://projecteuler.net/problem=1) ([solution](problems/0001-multiples-of-3-and-5/))
 
 ---
 
