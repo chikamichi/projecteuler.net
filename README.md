@@ -7,8 +7,13 @@ Solving problems from [https://projecteuler.net](https://projecteuler.net).
 1. Clone this project
 2. `npm install -g grunt-cli babel-node` (to install Grunt CLI and babel-node globally)
 3. `npm install` (to install local libraries for this project)
-4. `babel-node --presets es2015,stage-0 problems/0001-multiples-of-3-and-5/index.js`
-   (due to .babelrc, I believe the --presets flag is actually unnecessary)
+
+## Solve a problem
+
+1. Write a script under `problems/{index}-{title}/index.js`
+2. Run it using `babel-node`
+
+Example: `babel-node problems/0001-multiples-of-3-and-5/index.js`.
 
 ## Solved problems
 
@@ -18,7 +23,8 @@ Solving problems from [https://projecteuler.net](https://projecteuler.net).
 
 ## TODO
 
-`npm solve 1` should run the `babel-node` command for 0001, `npm solve 456` for 0456, etc.
+* `grunt solve 1` should run the `babel-node` command for 0001, `grunt solve 456` for 0456, etc.
+* `grunt solve all` should run all the problems
 
 ## Must read
 
