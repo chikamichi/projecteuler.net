@@ -20,6 +20,7 @@ You may use Mocha & Chai to write tests.
 ## Solved problems
 
 * 1. [Multiples of 3 and 5](https://projecteuler.net/problem=1) ([solution](problems/0001-multiples-of-3-and-5/))
+* 2. [Even Fibonacci numbers](https://projecteuler.net/problem=2) ([solution](problems/0002-even-fibonacci-numbers/))
 
 ---
 
