@@ -7,30 +7,36 @@
 // require("babel-core/register")
 // require("babel-polyfill")
 
-let expect = require('chai').expect
-
-function* range(begin, end, interval = 1) {
+function* sequence(begin, end, interval = 1) {
   for (let i = begin; i < end; i += interval) {
     yield i;
   }
 }
 
-function sequence(from, to, interval) {
+function range(from, to, interval) {
   let i, arr = []
-  for (i of range(from, to, interval)) {
+  for (i of sequence(from, to, interval)) {
     arr.push(i)
   }
   return arr
   // The following syntax does not seem to be supported by babel-node yet.
-  // return [ for (i of range(from, to, interval)) i ]
+  // return [for (i of range(from, to, interval)) i]
 }
 
-function solution(n) {
-  return sequence(0, n).reduce((acc, i) => {
+export function solution(n) {
+  return range(0, n).reduce((acc, i) => {
     return ((i % 3 === 0) || (i % 5 === 0)) ? acc + i : acc
   }, 0)
 }
 
-expect(solution(10), 'solution(10) gave bad result').to.equal(23)
+// --- Tests ---
 
-console.log('Solution:', solution(1000))
+import Mocha from 'mocha'
+let mocha = new Mocha()
+mocha.addFile(__dirname + '/test.js')
+mocha.run(() => {
+
+  // --- Solution ---
+
+  console.log("Problem's solution:", solution(1000))
+})
