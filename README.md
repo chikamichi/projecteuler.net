@@ -1,6 +1,12 @@
 # Project Euler
 
-Solving problems from [https://projecteuler.net](https://projecteuler.net).
+Solving problems from [https://projecteuler.net](https://projecteuler.net) using
+ECMAScript 6.
+
+*Disclaimer*: ProjectEuler's spirit is to have participants solve problems on
+their own. Looking for mathematical or programming insights is just fine, but
+reaching to fully-fledged solutions breaks the game. If you plan on solving some
+problems available in this repository, I'd encourage you *not* to look at them.
 
 ## Installing the project
 
