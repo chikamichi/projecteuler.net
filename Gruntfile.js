@@ -13,6 +13,16 @@ function padProblemIndex(num) {
   return s
 }
 
+function findProblem(index) {
+  let pathMatch = shell.exec(`find problems -type d -name "${padProblemIndex(index)}-*"`, {silent: true})
+  return trimNewLine(pathMatch.output)
+}
+
+function findAllProblems() {
+  let pathMatches = shell.exec('find problems -mindepth 1 -maxdepth 1 -type d', {silent: true})
+  return pathMatches.output.split('\n').map((path) => { return trimNewLine(path) }).slice(0, -1)
+}
+
 module.exports = function(grunt) {
   require("load-grunt-tasks")(grunt)
 
@@ -20,20 +30,35 @@ module.exports = function(grunt) {
     "pkg": grunt.file.readJSON('package.json')
   })
 
+  function solveProblem(index) {
+    let path = findProblem(index)
+
+    if (path) {
+      solveProblemByPath(path)
+    } else {
+      grunt.log.writeln("That problem has not been solved yet!")
+    }
+  }
+
+  function solveProblemByPath(path) {
+    grunt.log.writeln("")
+    grunt.log.writeln(`>>> Solving ${path}`)
+    shell.exec(`babel-node ${path}/index.js`)
+  }
+
+  function solveAllProblems() {
+    findAllProblems().map((path) => {
+      solveProblemByPath(path)
+    })
+  }
+
   // Running "grunt solve:1" will solve problem 0001, etc.
   grunt.registerTask('solve', 'Solve one or several problem(s)', function(index) {
     if (arguments.length == 0) {
-      grunt.log.writeln(this.name + ": must provide a problem index.")
-    } else {
-      let pathMatch = shell.exec(`find problems -type d -name "${padProblemIndex(index)}-*"`, {silent: true})
-      let path = trimNewLine(pathMatch.output)
-      if (path) {
-        grunt.log.writeln(`Solving ${path}`)
-        shell.exec(`babel-node ${path}/index.js`)
-      } else {
-        grunt.log.writeln("No match found, aborting.")
-      }
+      return grunt.log.writeln(this.name + ": must provide a problem index.")
     }
+
+    index == 'all' ? solveAllProblems() : solveProblem(index)
   })
 
   // grunt.registerTask("default", ["solve"]);
