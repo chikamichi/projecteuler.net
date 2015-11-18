@@ -28,7 +28,3 @@ You may use Mocha & Chai to write tests.
 
 * `grunt solve 1` should run the `babel-node` command for 0001, `grunt solve 456` for 0456, etc.
 * `grunt solve all` should run all the problems
-
-## Must read
-
-* http://stackoverflow.com/questions/33527653/babel-6-regeneratorruntime-is-not-defined-with-async-await
