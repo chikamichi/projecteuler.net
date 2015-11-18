@@ -1,0 +1,27 @@
+{
+  "name": "projecteuler.net",
+  "version": "0.0.1",
+  "description": "Solving problems from [https://projecteuler.net](https://projecteuler.net).",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --require mocha-clean --compilers js:babel-core/register",
+    "solve": "echo \"Error: not implemented yet\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chikamichi/projecteuler.net.git"
+  },
+  "author": "Jean-Denis Vauguet <jd@vauguet.fr>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chikamichi/projecteuler.net/issues"
+  },
+  "homepage": "https://github.com/chikamichi/projecteuler.net#readme",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "grunt": "^0.4.5",
+    "load-grunt-tasks": "^3.3.0",
+    "mocha": "^2.3.4",
+    "mocha-clean": "^1.0.0"
+  }
+}
