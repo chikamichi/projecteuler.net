@@ -7,6 +7,8 @@
 // require("babel-core/register")
 // require("babel-polyfill")
 
+// --- My first solution ---
+
 function* sequence(begin, end, interval = 1) {
   for (let i = begin; i < end; i += interval) {
     yield i;
@@ -29,6 +31,22 @@ export function solution(n) {
   }, 0)
 }
 
+// --- A smarter solution ---
+
+// Integer division x/y, discarding the remainder.
+function div(x, y) {
+  return Math.floor(x/y)
+}
+
+function sumDivisibleBy(target, divider) {
+  let p = div(target-1, divider)
+  return div(p*(p+1), 2) * divider
+}
+
+export function solutionSmart(n) {
+  return sumDivisibleBy(n, 3) + sumDivisibleBy(n, 5) - sumDivisibleBy(n, 3*5)
+}
+
 // --- Tests ---
 
 import Mocha from 'mocha'
@@ -39,4 +57,5 @@ mocha.run(() => {
   // --- Solution ---
 
   console.log("Problem's solution:", solution(1000))
+  console.log("Problem's solution (smarter computation):", solutionSmart(1000))
 })
