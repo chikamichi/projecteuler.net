@@ -11,9 +11,9 @@ Solving problems from [https://projecteuler.net](https://projecteuler.net).
 ## Solve a problem
 
 1. Write a script under `problems/{index}-{title}/index.js`
-2. Run it using `babel-node`
+2. Run it using `grunt solve {index}`
 
-Example: `babel-node problems/0001-multiples-of-3-and-5/index.js`.
+Example: `grunt solve:1` will run `problems/0001-multiples-of-3-and-5/index.js`
 
 You may use Mocha & Chai to write tests.
 
@@ -26,5 +26,4 @@ You may use Mocha & Chai to write tests.
 
 ## TODO
 
-* `grunt solve 1` should run the `babel-node` command for 0001, `grunt solve 456` for 0456, etc.
-* `grunt solve all` should run all the problems
+* `grunt solve:all` should run all the problems
