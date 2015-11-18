@@ -5,8 +5,8 @@ Solving problems from [https://projecteuler.net](https://projecteuler.net).
 ## Install
 
 1. Clone this project
-2. `npm install -g grunt-cli babel-node` (to install Grunt CLI and babel-node globally)
-3. `npm install` (to install local libraries for this project)
+2. `[sudo] npm install -g grunt-cli babel-node` (to install required global libraries)
+3. `npm install` (to install libraries local to this project)
 
 ## Solve a problem
 
@@ -15,9 +15,11 @@ Solving problems from [https://projecteuler.net](https://projecteuler.net).
 
 Example: `babel-node problems/0001-multiples-of-3-and-5/index.js`.
 
+You may use Mocha & Chai to write tests.
+
 ## Solved problems
 
-*None yet!*
+* 1. [Multiples of 3 and 5](https://projecteuler.net/problem=1) ([solution](problems/0001-multiples-of-3/))
 
 ---
 
